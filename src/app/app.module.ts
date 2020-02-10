@@ -9,9 +9,11 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { authReducer } from './auth/auth.reducer';
 import { environment } from '../environments/environment';
+import { LoginDirective } from './auth/login.directive';
+import { LogoutDirective } from './auth/logout.directive';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent, LoginDirective, LogoutDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,
