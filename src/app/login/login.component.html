@@ -1,2 +1,5 @@
 <p>login works!</p>
-<button appLogin>Login</button>
+<firebase-ui
+  (signInSuccessWithAuthResult)="successCallback($event)"
+  (signInFailure)="errorCallback($event)"
+></firebase-ui>

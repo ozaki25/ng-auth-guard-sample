@@ -1,10 +1,15 @@
 export interface AuthState {
-  isLoggedIn: boolean;
+  authUser?: {
+    uid: string;
+    displayName: string;
+    email: string;
+    phoneNumber?: string;
+    photoURL?: string;
+  };
 }
 
 export const initialState: AuthState = {
-  isLoggedIn: false,
+  authUser: null,
 };
 
-export const selectIsLoggedIn = ({ auth }: { auth: AuthState }) =>
-  auth.isLoggedIn;
+export const selectAuthUser = ({ auth }: { auth: AuthState }) => auth.authUser;

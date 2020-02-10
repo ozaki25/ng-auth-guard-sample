@@ -4,8 +4,8 @@ import { login, logout } from './auth.actions';
 
 const reducer = createReducer(
   initialState,
-  on(login, state => ({ ...state, isLoggedIn: true })),
-  on(logout, state => ({ ...state, isLoggedIn: false })),
+  on(login, (state, { authUser }) => ({ ...state, authUser })),
+  on(logout, state => ({ ...state, authUser: null })),
 );
 
 export function authReducer(state: AuthState, action: Action) {
